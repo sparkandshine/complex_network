@@ -74,6 +74,8 @@ def main():
 	I = np.identity(N)
 	R = np.linalg.pinv(I - d*M) * ((1-d)/N * column_vector)
 
+	R = R/sum(R)	# normalized R, so that page ranks sum to 1.
+
 	print(R)
 	return
 
